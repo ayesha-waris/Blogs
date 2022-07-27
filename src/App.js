@@ -17,7 +17,7 @@ function App() {
     <Route path='/index' element = {<Home/>} />
     <Route path='/newBlog' element  = {<AddBlog/>}/>
     <Route path='/detail/*' element = {<BlogDetail/>} />
-    <Route path='/edit/*' element = {<Edit/>} />
+    
   </Routes>
   </Fragment>
   );
