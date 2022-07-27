@@ -2,10 +2,15 @@ import { useState } from "react";
 import Wrapper from "./Wrapper";
 import Popover from '@mui/material/Popover';
 import classes from './BlogDetail.module.css';
-import Typography from '@mui/material/Typography';
+
 import Blog from "./Blog";
 import Edit from "./Edit";
 const BlogDetail = () => {
+
+
+
+  ///get value from store
+
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClose = (e) => {

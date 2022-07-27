@@ -10,7 +10,7 @@ const Edit = (props) => {
   return ( 
     
     <div className={`${classes.wrapper}`}>
-     <Form className = {classes.edit} submitHandler={submitHandler} buttonValue = {'Edit Blog'}/>
+     <Form className = {classes.edit} submitHandler={submitHandler} buttonValue = {'Edit Blog'} title = {props.title} description = {props.description}/>
    </div >
 
    );
