@@ -13,4 +13,5 @@
     left: 0.5rem;
     bottom: 0.5rem;
     top: 5.5rem;
+    z-index: -1;
 }
