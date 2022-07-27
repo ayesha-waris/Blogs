@@ -1,0 +1,25 @@
+.detail {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    background-color: rgba(63, 61, 59, 0.748);
+}
+
+.detail p {
+    overflow: scroll;
+    text-align: justify;
+    display: block;
+    height: max-content;
+}
+
+.detail p {
+    cursor: auto;
+    color: black;
+}
+
+.detail h1 {
+    text-align: center;
+}

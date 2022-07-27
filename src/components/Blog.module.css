@@ -14,7 +14,8 @@
 
 .blog:hover {
     cursor: pointer;
-    background-color: rgba(255, 166, 0, 0.748);
+    background-color: rgba(63, 61, 59, 0.748);
+    color: white;
 }
 
 .blog h1 {

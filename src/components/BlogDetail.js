@@ -1,7 +1,13 @@
+import Wrapper from "./Wrapper";
+import classes from './BlogDetail.module.css';
+import Blog from "./Blog";
 const BlogDetail = () => {
   return ( 
-    <>
-    Blog Detail</>
+  <Wrapper>
+    <button> Edit</button>
+   <Blog className={classes.detail} noButton = {true}/>
+   
+  </Wrapper>
    );
 }
  
