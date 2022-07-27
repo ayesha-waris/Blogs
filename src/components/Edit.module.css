@@ -1,0 +1,9 @@
+.edit {
+    padding: 0;
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 26%);
+    border-radius: 12px;
+    color: white;
+    background-color: gainsboro;
+}

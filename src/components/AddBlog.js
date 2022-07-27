@@ -1,8 +1,15 @@
+import Form from "./Form";
+import Wrapper from "./Wrapper";
+
 const AddBlog = () => {
+  const submitHandler = (title, description) => {
+    console.log(title , description)
+  }
   return ( 
-    <>
-    Add Blog
-    </>
+    <Wrapper>
+    <Form submitHandler={submitHandler} buttonValue = {'Add Blog'} />
+    </Wrapper>
+    
    );
 }
  
