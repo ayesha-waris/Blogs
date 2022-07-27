@@ -6,6 +6,7 @@ import AddBlog from './components/AddBlog';
 import BlogDetail from './components/BlogDetail';
 import NavBar from './components/NavBar';
 import { Fragment } from 'react';
+import { Edit } from '@mui/icons-material';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
     <Route path='/index' element = {<Home/>} />
     <Route path='/newBlog' element  = {<AddBlog/>}/>
     <Route path='/detail/*' element = {<BlogDetail/>} />
+    <Route path='/edit/*' element = {<Edit/>} />
   </Routes>
   </Fragment>
   );

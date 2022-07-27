@@ -1,13 +1,17 @@
 import classes from './Edit.module.css'
 import Form from './Form';
 import Wrapper from './Wrapper';
-const Edit = () => {
+const Edit = (props) => {
+  const submitHandler = (title, description) => {
+    props.handleClose();
+    console.log(title , description)
+  }
 
   return ( 
     
-    <form className={`${classes.edit}`}>
-<Form/>
-   </form>
+    <div className={`${classes.wrapper}`}>
+     <Form className = {classes.edit} submitHandler={submitHandler} buttonValue = {'Edit Blog'}/>
+   </div >
 
    );
 }

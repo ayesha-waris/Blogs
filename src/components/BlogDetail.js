@@ -8,7 +8,8 @@ import Edit from "./Edit";
 const BlogDetail = () => {
   const [anchorEl, setAnchorEl] = useState(null);
 
-  const handleClose = () => {
+  const handleClose = (e) => {
+  
     setAnchorEl(null);
   };
   const clickHandler = (e) => {
@@ -26,9 +27,9 @@ const BlogDetail = () => {
         id={id}
         open={open}
         anchorEl={anchorEl}
-        onClose={handleClose}
+        // onClose={handleClose}
         anchorReference="anchorPosition"
-        anchorPosition={{ top: 350, left: 500 }}
+        anchorPosition={{ top: 530, left: 650 }}
         anchorOrigin={{
           vertical: 'center',
           horizontal: 'center',
@@ -38,8 +39,8 @@ const BlogDetail = () => {
           horizontal: 'center',
         }}
       >
-        <Edit/>
-      </Popover>
+        <Edit handleClose = {handleClose} />
+      </Popover >
    
   </Wrapper>
    );

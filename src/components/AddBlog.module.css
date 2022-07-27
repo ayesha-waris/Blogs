@@ -1,20 +1,8 @@
-.wrapper {
-    height: 40rem;
-    width: auto;
-    padding: 0;
-    margin: 1rem;
-    padding: 1rem;
-    box-shadow: 0 2px 8px rgb(0 0 0 / 26%);
-    border-radius: 12px;
-    color: white;
-    background-color: gainsboro;
+.form {
+    align-content: center;
 }
 
-.edit {
-    width: 60rem;
-}
-
-.edit input {
+.form input {
     width: 100%;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.26);
     border-radius: 12px;
@@ -25,13 +13,13 @@
     font-size: 2.5rem;
 }
 
-.edit input:focus {
+.form input:focus {
     box-shadow: 0 2px 8px orange;
     background-color: rgba(63, 61, 59, 0.556);
 }
 
-.edit textarea {
-    width: 94%;
+.form textarea {
+    width: 97.5%;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.26);
     border-radius: 12px;
     color: white;
@@ -39,19 +27,19 @@
     background-color: rgba(63, 61, 59, 0.748);
     position: absolute;
     bottom: 5rem;
-    top: 6rem;
+    top: 5rem;
     font-size: 1.5rem;
 }
 
-.edit textarea:focus {
+.form textarea:focus {
     box-shadow: 0 2px 8px orange;
     background-color: rgba(63, 61, 59, 0.556);
 }
 
-.edit button {
+.form button {
     position: absolute;
-    bottom: 1.5rem;
-    left: 2rem;
+    bottom: 0;
+    left: 1rem;
     right: 1rem;
     display: block;
     color: white;
@@ -59,13 +47,13 @@
     border: 1px solid rgb(14, 14, 13);
     background-color: black;
     border-radius: 12px;
-    height: 3rem;
-    width: 95%;
+    height: 4rem;
+    width: 98%;
     font-weight: bolder;
     font-size: larger;
 }
 
-.edit button:hover {
+.form button:hover {
     background-color: rgba(63, 61, 59, 0.748);
     cursor: pointer;
 }
