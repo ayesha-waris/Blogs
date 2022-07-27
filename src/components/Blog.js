@@ -1,7 +1,12 @@
 import Card from 'react-bootstrap/Card';
+import { useNavigate } from 'react-router';
 
 import classes from './Blog.module.css';
-const Blog = () => {
+const Blog = (props) => {
+    const navigate = useNavigate();
+  const clickHandler = () => {
+      navigate(`/detail/${props.id}`)
+  }
   return ( 
  
 <div className={classes.blog}>
@@ -11,7 +16,7 @@ const Blog = () => {
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, libero. Voluptatem quis dignissimos, expedita hic sapiente harum cum, laborum laboriosam accusamus sequi officiis incidunt nostrum labore, atque inventore numquam dolor?
    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis autem ex, odio est eum nemo quisquam illo vel, consequuntur quas voluptatem ea, molestiae atque nisi a magnam. Beatae, facilis tenetur?
     </p>
-    <button>Detail</button>
+    <button onClick = {clickHandler}>Detail</button>
 </div>
      
 );
