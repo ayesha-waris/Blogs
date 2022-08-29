@@ -12,7 +12,7 @@ class BlogSerializer(serializers.ModelSerializer):
     class Meta:
         model = BlogsModel
         fields = [
-            
+            'pk',
             'title',
             'content',
         ]
