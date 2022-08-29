@@ -1,12 +1,14 @@
 
 import './App.css';
 import {Routes, Route, Navigate} from 'react-router-dom'
-import Home from './components/Home';
-import AddBlog from './components/AddBlog';
-import BlogDetail from './components/BlogDetail';
+import Home from './pages/Home';
+
+
 import NavBar from './components/NavBar';
 import { Fragment } from 'react';
-import { Edit } from '@mui/icons-material';
+
+import AddBlog from './pages/AddBlog';
+import BlogDetail from './pages/BlogDetail';
 
 function App() {
   return (
