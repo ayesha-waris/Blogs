@@ -1,10 +1,10 @@
 
-import './App.css';
+
 import {Routes, Route, Navigate} from 'react-router-dom'
 import Home from './pages/Home';
 
 
-import NavBar from './components/NavBar';
+import NavBar from './components/Navbar/NavBar';
 import { Fragment } from 'react';
 
 import AddBlog from './pages/AddBlog';

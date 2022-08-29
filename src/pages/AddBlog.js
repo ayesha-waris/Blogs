@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router';
-import Form from '../components/Form';
-import Wrapper from '../components/Wrapper';
+import Form from '../components/Forms/Form';
+import Wrapper from '../components/UI/Wrapper';
 import classes from './AddBlog.module.css';
 
 const AddBlog = () => {

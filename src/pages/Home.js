@@ -1,6 +1,6 @@
 
-import Blog from "../components/Blog";
-import Wrapper from "../components/Wrapper";
+import Blog from "../components/UI/Blog"
+import Wrapper from "../components/UI/Wrapper";
 import useFetch from '../hooks/useFetch'
 
 

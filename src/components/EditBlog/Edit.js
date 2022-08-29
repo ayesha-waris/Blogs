@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import classes from './Edit.module.css';
-import Form from './Form';
+import Form from '../Forms/Form';
 
 const Edit = (props) => {
 
