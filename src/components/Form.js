@@ -2,29 +2,46 @@ import classes from './Form.module.css';
 import { useState } from 'react';
 
 const Form = (props) => {
-  const [title, setTitle] = useState(props.title ? props.title : 'Title');
-  const [description, setDescription] = useState(
-    props.description ? props.description : 'Add Your Blog.....'
+  const {className, buttonValue, title, description , clearFields} = props; 
+ 
+  const [_title, setTitle] = useState(title ? title : 'Title');
+  const [_description, setDescription] = useState(
+    description ? description : 'Add Your Blog.....'
   );
-
-  if (props.description) {
-    setDescription(props.description);
-  }
 
   const submitHandler = (e) => {
     e.preventDefault();
     props.submitHandler(title, description);
   };
+
+  const titleClickHanndler = (e) => {
+
+    if(clearFields){
+      setTitle('')
+    }
+
+  }
+  const descriptionClickHanndler = (e) => {
+    if(clearFields){
+      setDescription('')
+    }
+  }
   return (
-    <form onSubmit={submitHandler} className={props.className}>
+    <form onSubmit={submitHandler} className={className}>
       <input
-        value={title}
+        value={_title}
+        onClick={ titleClickHanndler}
         onChange={(e) => setTitle(e.target.value)}
-        placeholder={title}
+        placeholder={_title}
       />
       <br />
-      <textarea defaultValue={description} />
-      <button>{props.buttonValue} </button>
+      <textarea
+        placeholder={_description}
+        onClick = { descriptionClickHanndler }
+        onChange={(e) => setDescription(e.target.value)}
+        value={_description}
+      />
+      <button>{buttonValue}</button>
     </form>
   );
 };
