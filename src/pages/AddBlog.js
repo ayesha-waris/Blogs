@@ -9,13 +9,15 @@ const AddBlog = () => {
 
   const submitForm = async (title, content) => {
     const blog = { title, content };
-
     fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(blog),
-    }).then(() => {
-      console.log('new blog added');
+    }).then((res) => {
+      if(!res.ok){
+        console.error("Blog not created")
+      }
+      
     });
 
     navigate('/index');

@@ -13,7 +13,7 @@ const { blogs, isLoading} = useFetch(url);
     
     <Wrapper>
     {isLoading && <div> is Loading ...............</div>}
-    {blogs && blogs.map(blog => <Blog key={blog.pk} id={blog.pk} title={blog.title} content={blog.content} />) }
+    {blogs && blogs.map(blog => <Blog key={blog.pk} id={blog.pk.toString()} title={blog.title} content={blog.content} />) }
 
     </Wrapper>
    );

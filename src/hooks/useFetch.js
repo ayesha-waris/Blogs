@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 const useFetch = (url) => {
   const [blogs, setBlogs] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     const abortCont = new AbortController();
 
@@ -15,6 +16,7 @@ const useFetch = (url) => {
       .then((data) => {
         setBlogs(data);
         setIsLoading(false);
+     
       })
       .catch((err) => {
         if (err.name === 'AbortError') {
@@ -22,7 +24,7 @@ const useFetch = (url) => {
         } else {
           setIsLoading(false);
         }
-        console.log(err.message);
+    
       });
     return () => abortCont.abort();
   }, [url]);

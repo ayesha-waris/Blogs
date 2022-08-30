@@ -1,5 +1,5 @@
+import PropTypes from 'prop-types'
 import { useState } from 'react';
-import PropTypes from 'prop-types';
 
 const Form = (props) => {
   const {className, buttonValue, title, description , clearFields} = props; 
@@ -11,7 +11,7 @@ const Form = (props) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    props.submitHandler(title, description);
+    props.submitHandler(_title, _description);
   };
 
   const titleClickHanndler = (e) => {
@@ -48,11 +48,10 @@ const Form = (props) => {
 
 Form.propTypes = {
   className: PropTypes.string,
-  submitHandler: PropTypes.func,
   buttonValue: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,
   clearFields: PropTypes.bool
+};
 
-}
 export default Form;

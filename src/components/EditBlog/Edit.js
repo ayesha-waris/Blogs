@@ -13,8 +13,10 @@ const Edit = (props) => {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(blog),
-    }).then(() => {
-      console.log('new blog added');
+    }).then((res) => {
+      if(!res.ok){
+        console.error("Blog not edited successfully")
+      }
     });
     props.handleClose(title, content);
     console.log(title, content);
