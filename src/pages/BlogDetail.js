@@ -37,7 +37,7 @@ const BlogDetail = () => {
       <>
         <Blog
           className={classes.detail}
-          noButton={true}
+          showButton={true}
           title={blogs.title}
           content={blogs.content}
         />

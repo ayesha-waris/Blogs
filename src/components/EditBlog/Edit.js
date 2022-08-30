@@ -1,10 +1,9 @@
-import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import classes from './Edit.module.css';
 import Form from '../Forms/Form';
 
 const Edit = (props) => {
-
-  const {id, title, content} = props
+  const { id, title, content } = props;
 
   const url = `http://localhost:8000/api/edit/${id}/`;
 
@@ -22,7 +21,7 @@ const Edit = (props) => {
   };
 
   return (
-    <div className={`${classes.wrapper}`}>
+    <div className={classes.wrapper}>
       <Form
         className={classes.edit}
         submitHandler={submitHandler}
@@ -32,6 +31,12 @@ const Edit = (props) => {
       />
     </div>
   );
+};
+
+Edit.propTypes = {
+  id: PropTypes.string,
+  title: PropTypes.string,
+  content: PropTypes.string
 };
 
 export default Edit;

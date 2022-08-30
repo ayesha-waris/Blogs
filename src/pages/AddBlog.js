@@ -5,11 +5,12 @@ import classes from './AddBlog.module.css';
 
 const AddBlog = () => {
   const navigate = useNavigate();
+  const url = 'http://localhost:8000/api/create-blog/';
 
-  const submitHandler = async (title, content) => {
+  const submitForm = async (title, content) => {
     const blog = { title, content };
 
-    fetch('http://localhost:8000/api/create-blog/', {
+    fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(blog),
@@ -22,7 +23,7 @@ const AddBlog = () => {
   return (
     <Wrapper>
       <Form
-        submitHandler={submitHandler}
+        submitHandler={submitForm}
         buttonValue={'Add Blog'}
         className={classes.form}
         clearFields={true}
