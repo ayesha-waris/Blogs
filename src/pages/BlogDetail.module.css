@@ -1,0 +1,45 @@
+.detail {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    background-color: rgba(63, 61, 59, 0.748);
+}
+
+.detail p {
+    text-align: justify;
+    display: block;
+    height: max-content;
+    font-size: x-large;
+}
+
+.detail p {
+    cursor: auto;
+    color: black;
+}
+
+.detail h1 {
+    text-align: center;
+}
+
+.edit {
+    display: block;
+    margin-left: auto;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    color: black;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    border: 1px solid rgb(14, 14, 13);
+    background-color: orange;
+    width: 4rem;
+    border-radius: 12px;
+    z-index: 2;
+    position: relative;
+    height: 2rem;
+}
+
+.edit:hover {
+    background-color: rgba(255, 166, 0, 0.686);
+}

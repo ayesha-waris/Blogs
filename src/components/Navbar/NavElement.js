@@ -4,10 +4,13 @@ const NavElement = (props) => {
   const navigate = useNavigate();
 
   const clickHandler = () => {
-   navigate(props.path,{replace: true});
-  }
+    navigate(props.path, { replace: true });
+  };
   return (
-    <Button onClick={clickHandler} sx={{ my: 2, color: 'white', display: 'block' }}>
+    <Button
+      onClick={clickHandler}
+      sx={{ my: 3, color: 'orange', display: 'block' }}
+    >
       {props.page}
     </Button>
   );

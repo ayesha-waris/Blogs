@@ -1,0 +1,71 @@
+.wrapper {
+    height: 40rem;
+    width: auto;
+    padding: 0;
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 26%);
+    border-radius: 12px;
+    color: white;
+    background-color: gainsboro;
+}
+
+.edit {
+    width: 60rem;
+}
+
+.edit input {
+    width: 100%;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.26);
+    border-radius: 12px;
+    color: white;
+    border: 2px solid orange;
+    background-color: rgba(63, 61, 59, 0.748);
+    height: 3rem;
+    font-size: 2.5rem;
+}
+
+.edit input:focus {
+    box-shadow: 0 2px 8px orange;
+    background-color: rgba(63, 61, 59, 0.556);
+}
+
+.edit textarea {
+    width: 94%;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.26);
+    border-radius: 12px;
+    color: white;
+    border: 2px solid orange;
+    background-color: rgba(63, 61, 59, 0.748);
+    position: absolute;
+    bottom: 5rem;
+    top: 6rem;
+    font-size: 1.5rem;
+}
+
+.edit textarea:focus {
+    box-shadow: 0 2px 8px orange;
+    background-color: rgba(63, 61, 59, 0.556);
+}
+
+.edit button {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 2rem;
+    right: 1rem;
+    display: block;
+    color: white;
+    box-shadow: 0 2px 8px orange;
+    border: 1px solid rgb(14, 14, 13);
+    background-color: black;
+    border-radius: 12px;
+    height: 3rem;
+    width: 95%;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.edit button:hover {
+    background-color: rgba(63, 61, 59, 0.748);
+    cursor: pointer;
+}
