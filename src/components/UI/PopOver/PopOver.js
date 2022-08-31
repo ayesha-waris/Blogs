@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import Popover from '@mui/material/Popover';
 
-import Edit from '../EditBlog/Edit';
+import Edit from '../../EditBlog/Edit';
 
 const PopOver = (props) => {
     const {id, open, anchorEl,handleClose, title, content } = props

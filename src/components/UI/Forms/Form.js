@@ -1,9 +1,9 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 
 const Form = (props) => {
-  const {className, buttonValue, title, description , clearFields} = props; 
- 
+  const { className, buttonValue, title, description, clearFields } = props;
+
   const [_title, setTitle] = useState(title ? title : 'Title');
   const [_description, setDescription] = useState(
     description ? description : 'Add Your Blog.....'
@@ -15,29 +15,27 @@ const Form = (props) => {
   };
 
   const titleClickHanndler = (e) => {
-
-    if(clearFields){
-      setTitle('')
+    if (clearFields) {
+      setTitle('');
     }
-
-  }
+  };
   const descriptionClickHanndler = (e) => {
-    if(clearFields){
-      setDescription('')
+    if (clearFields) {
+      setDescription('');
     }
-  }
+  };
   return (
     <form onSubmit={submitHandler} className={className}>
       <input
         value={_title}
-        onClick={ titleClickHanndler}
+        onClick={titleClickHanndler}
         onChange={(e) => setTitle(e.target.value)}
         placeholder={_title}
       />
       <br />
       <textarea
         placeholder={_description}
-        onClick = { descriptionClickHanndler }
+        onClick={descriptionClickHanndler}
         onChange={(e) => setDescription(e.target.value)}
         value={_description}
       />
@@ -51,7 +49,7 @@ Form.propTypes = {
   buttonValue: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,
-  clearFields: PropTypes.bool
+  clearFields: PropTypes.bool,
 };
 
 export default Form;

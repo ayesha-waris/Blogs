@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import classes from './Blog.module.css';
 
 const Blog = (props) => {
+  
+  const {id, name, title, content, showButton } = props
+
   const navigate = useNavigate();
   const clickHandler = () => {
     navigate(`/detail/${props.id}`);

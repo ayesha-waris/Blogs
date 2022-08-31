@@ -15,7 +15,7 @@ function App() {
     <Route path="/" element={<Navigate to="/index" />} />
     <Route path='/index' element = {<Home/>} />
     <Route path='/newBlog' element  = {<AddBlog/>}/>
-    <Route exact path='/detail/:id' element = {<BlogDetail/>} />
+    <Route path='/detail/:id' element = {<BlogDetail/>} />
     <Route path="*" element = {<NotFound/>}/>
   </Routes>
   </Fragment>

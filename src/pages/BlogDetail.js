@@ -1,13 +1,11 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import Popover from '@mui/material/Popover';
 import classes from './BlogDetail.module.css';
 import Wrapper from '../components/UI/Wrapper';
 import Blog from '../components/UI/Blog';
-import Edit from '../components/EditBlog/Edit';
 import useFetch from '../hooks/useFetch';
-import PopOver from '../components/PopOver/PopOver';
+import PopOver from '../components/UI/PopOver/PopOver';
 
 const BlogDetail = () => {
   const { id } = useParams();

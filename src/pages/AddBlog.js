@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router';
-import Form from '../components/Forms/Form';
+import Form from '../components/UI/Forms/Form';
 import Wrapper from '../components/UI/Wrapper';
 import classes from './AddBlog.module.css';
 
@@ -7,8 +7,9 @@ const AddBlog = () => {
   const navigate = useNavigate();
   const url = 'http://localhost:8000/api/create-blog/';
 
-  const submitForm = async (title, content) => {
+  const submitForm = (title, content) => {
     const blog = { title, content };
+
     fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

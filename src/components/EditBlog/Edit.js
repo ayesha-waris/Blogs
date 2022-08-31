@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import classes from './Edit.module.css';
-import Form from '../Forms/Form';
+import Form from '../UI/Forms/Form';
 
 const Edit = (props) => {
   const { id, title, content } = props;
@@ -14,12 +14,11 @@ const Edit = (props) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(blog),
     }).then((res) => {
-      if(!res.ok){
-        console.error("Blog not edited successfully")
+      if (!res.ok) {
+        console.error('Blog not edited successfully');
       }
     });
     props.handleClose(title, content);
-    console.log(title, content);
   };
 
   return (
@@ -38,7 +37,8 @@ const Edit = (props) => {
 Edit.propTypes = {
   id: PropTypes.string,
   title: PropTypes.string,
-  content: PropTypes.string
+  content: PropTypes.string,
 };
 
 export default Edit;
+
