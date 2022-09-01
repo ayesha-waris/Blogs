@@ -7,7 +7,7 @@ from .serializers import BlogSerializer
 
 
 class BlogsAdmin(admin.ModelAdmin):
-    list_display = ("id", "title", "content")
+    list_display = ("id", "author", "title", "content")
 
 
 admin.site.register(BlogsModel, BlogsAdmin)
