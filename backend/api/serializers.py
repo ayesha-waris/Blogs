@@ -29,3 +29,5 @@ class BlogSerializer(serializers.ModelSerializer):
     def update(self, instance, validated_data):
         return super().update(instance, validated_data)
 
+class BlogFilterSerializer(serializers.Serializer):
+    filterBy = serializers.CharField()

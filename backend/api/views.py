@@ -1,7 +1,9 @@
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, IsAuthenticatedOrReadOnly
+from django.db.models import Q
+
 from .models import BlogsModel
-from .serializers import BlogSerializer
+from .serializers import BlogSerializer, BlogFilterSerializer
 
 # Create your views here.
 
@@ -18,7 +20,19 @@ class BlogListApiView(generics.ListAPIView):
     serializer_class = BlogSerializer 
     permission_classes = [IsAuthenticatedOrReadOnly]
 
+class FilteredListApiView(generics.ListAPIView):
+    queryset = BlogsModel.objects.all()
+    serializer_class = BlogSerializer 
+    permission_classes = [IsAuthenticatedOrReadOnly]
 
+    def get_queryset(self, *args, **kwargs):
+        qs = super().get_queryset(*args, **kwargs)
+        q = self.request.GET.get('q')
+        print(qs[0].author)
+        results = BlogsModel.objects.none()
+        if q is not None: 
+          results = qs.search(q)
+        return results
 
 class UserBlogsApiView(generics.ListAPIView):
     queryset = BlogsModel.objects.all()

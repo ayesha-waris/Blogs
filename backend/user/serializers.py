@@ -30,8 +30,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         return data
 
     def create(self, validated_data):
-        def create(self, validate_data):
-            return User.objects.create_user(**validate_data)
+        return User.objects.create_user(**validated_data)
 
 
 class LoginSerializer(serializers.Serializer):
