@@ -8,12 +8,13 @@ const Home = () => {
 
 const url = 'http://localhost:8000/api/blogs/'
 const { blogs, isLoading} = useFetch(url);
+console.log(blogs)
 
   return ( 
     
     <Wrapper>
     {isLoading && <div> is Loading ...............</div>}
-    {blogs && blogs.map(blog => <Blog key={blog.pk} id={blog.pk.toString()} title={blog.title} content={blog.content} />) }
+    {blogs && blogs.results.map(blog => <Blog key={blog.pk} id={blog.pk.toString()} title={blog.title} content={blog.content} />) }
 
     </Wrapper>
    );

@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router';
-import Form from '../components/UI/Forms/Form';
+import Form from '../components/UI/Forms/BlogForm';
 import Wrapper from '../components/UI/Wrapper';
 import classes from './AddBlog.module.css';
 

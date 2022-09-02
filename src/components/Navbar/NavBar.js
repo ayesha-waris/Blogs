@@ -48,6 +48,7 @@ const NavBar = () => {
           <Box sx={{ flexGrow: 2, display: { xs: 'none', md: 'flex' } }}>
             <NavElement page='Home' path='/index' />
             <NavElement page='Add Blog' path='/newBlog' />
+            <NavElement page='Login' path='/newBlog' />
           </Box>
         </Toolbar>
       </Container>
