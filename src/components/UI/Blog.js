@@ -1,22 +1,45 @@
-import { useNavigate } from 'react-router';
+import { useNavigate , Link} from 'react-router';
 import PropTypes from 'prop-types';
 import classes from './Blog.module.css';
+import { useState } from 'react';
+import PopOver from './PopOver/PopOver'
 
 const Blog = (props) => {
   
-  const {id, name, title, content, showButton } = props
+  const {id,className, title, content, showButton, isEditable=false } = props
 
-  const navigate = useNavigate();
-  const clickHandler = () => {
-    navigate(`/detail/${props.id}`);
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleClose = (title, description) => {
+    setAnchorEl(null);
   };
+
+  const blogEditClickHandler = (e) => {
+    setAnchorEl(e.currentTarget);
+  };
+ 
+  const navigate = useNavigate();
+ 
+  const blogDetailClickHandler = () => {
+    navigate(`/index/detail/${id}`);
+  };
+  const open = Boolean(anchorEl);
   return (
     <div
-      className={`${classes.blog} ${props.className ? props.className : ''}`}
+      className={`${classes.blog} ${className ? className : ''}`}
     >
-      <h1> {props.title}</h1>
-      <p>{props.content}</p>
-      {!props.showButton ? <button onClick={clickHandler}>Detail</button> : null}
+      <h1> {title}</h1>
+      <p>{content}</p>
+      {!showButton ? <button onClick={blogDetailClickHandler}>Detail</button> : null}
+      {isEditable ? <button onClick={blogEditClickHandler}>Edit</button> : null}
+      <PopOver
+              id={id}
+              open={open}
+              anchorEl={anchorEl}
+              handleClose={handleClose}
+              title={title}
+              content={content}
+            />
     </div>
   );
 };
@@ -25,7 +48,8 @@ Blog.propTypes = {
   id: PropTypes.string,
   title: PropTypes.string,
   content: PropTypes.string,
-  showButton: PropTypes.bool
+  showButton: PropTypes.bool,
+  isEditable:PropTypes.bool
 };
 
 

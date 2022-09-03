@@ -32,7 +32,7 @@ const MyBlogs = () => {
     {isLoading && <div> is Loading ...............</div>}
     {blogs && 
   
-    blogs.results.map(blog => <Blog key={blog.pk} id={blog.pk.toString()} title={blog.title} content={blog.content} />) 
+    blogs.results.map(blog => <Blog key={blog.pk} id={blog.pk.toString()} title={blog.title} content={blog.content} isEditable={true} />) 
     }
     {blogs && <> <Stack spacing={2} >
       <Pagination  count={ceil(blogs.count/5)} page={page}  hideNextButton={true} hidePrevButton={true} variant="outlined" onChange={ (e, value) => handlePagination(e,value)}/>

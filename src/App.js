@@ -11,18 +11,20 @@ import Login from './pages/Login';
 import MyBlogs from './pages/MyBlogs';
 
 function App() {
-
   return (
     <Fragment>
       <NavBar />
       <Routes>
         <Route path="/" element={<Navigate to="/index" />} />
-        <Route path="/index" element={<Home />} />
+        <Route path="index" element={<Home />}>
+          
+        </Route>
+        <Route path="/index/detail/:id" element={<BlogDetail />} />
         <Route path="/newBlog" element={<AddBlog />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/detail/:id" element={<BlogDetail />} />
-        <Route path="/myBlogs" element={<MyBlogs/>} />
+
+        <Route path="/myBlogs" element={<MyBlogs />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Fragment>

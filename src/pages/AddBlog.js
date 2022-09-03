@@ -10,7 +10,7 @@ import { useState, useEffect } from 'react';
 const AddBlog = () => {
   const dispatch = useDispatch()
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
-  console.log(isAuthenticated)
+ 
   const navigate = useNavigate();
   const url = 'http://localhost:8000/api/create-blog/';
   const [token, setToken] = useState(null);
@@ -43,7 +43,7 @@ const AddBlog = () => {
 
   return (
     <Wrapper>
-      {!isAuthenticated && <> 
+      {isAuthenticated && <> 
       <Form
         submitHandler={submitForm}
         buttonValue={'Add Blog'}
@@ -51,7 +51,7 @@ const AddBlog = () => {
         clearFields={true}
       />
       </>}
-      {isAuthenticated && <> 
+      {!isAuthenticated && <> 
       <p>Pease <Link to='/login'> Login </Link> to add a Blog!!</p>
       </>}
     </Wrapper>
