@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
 
-const Login = () => {
+const Login = (props) => {
 
     const {
         register,
@@ -12,10 +12,10 @@ const Login = () => {
         formState: { errors },
       } = useForm();
 
-    const onSubmit = (data) => {
-
-        console.log(JSON.stringify(data));
-        //signup api
+    const onSubmit = (credentials) => {
+        
+        props.onLoginSubmit(credentials)
+ 
     
     };
     return ( 

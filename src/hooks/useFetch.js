@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
-const useFetch = (url) => {
+const useFetch = (url, headers={'Content-Type': 'application/json'}) => {
   const [blogs, setBlogs] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const abortCont = new AbortController();
 
-    fetch(url, { signnal: abortCont.signal })
+    fetch(url, {
+      headers: headers})
       .then((res) => {
         if (!res.ok) {
           throw Error('error in fetching');

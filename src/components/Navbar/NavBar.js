@@ -49,6 +49,7 @@ const NavBar = () => {
             <NavElement page='Home' path='/index' />
             <NavElement page='Add Blog' path='/newBlog' />
             <NavElement page='Login' path='/login' />
+            <NavElement page='My Blogs' path='/myBlogs' />
           </Box>
         </Toolbar>
       </Container>
