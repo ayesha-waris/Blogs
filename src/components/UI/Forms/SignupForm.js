@@ -1,6 +1,6 @@
 import classes from './SignupForm.module.css';
 import React from 'react';
-import { ErrorMessage } from '@hookform/error-message';
+import { Link } from "react-router-dom";
 import { useForm } from 'react-hook-form';
 
 const SignupForm = () => {
@@ -18,7 +18,7 @@ const SignupForm = () => {
   };
 
   return (
-    <React.Fragment>
+    
       <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
         <label>User Name</label>
         <input placeholder="username" {...register('username', {required: true})} />
@@ -52,22 +52,11 @@ const SignupForm = () => {
         />
         {errors.password2?.type === 'required' && "Confirm Password is required"}
 
-        <ErrorMessage
-          errors={errors}
-          name="multipleErrorInput"
-          render={({ messages }) => {
-            console.log('messages', messages);
-            return messages
-              ? Object.entries(messages).map(([type, message]) => (
-                  <p key={type}>{message}</p>
-                ))
-              : null;
-          }}
-        />
-
         <button type="submit"> SignUp</button>
+        <p>Already have account? <Link to='/login'> Login here</Link></p>
       </form>
-    </React.Fragment>
+     
+      
   );
 };
 

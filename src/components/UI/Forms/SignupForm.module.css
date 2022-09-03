@@ -52,3 +52,9 @@
     background-color: rgba(63, 61, 59, 0.748);
     cursor: pointer;
 }
+
+.form p {
+    position: absolute;
+    margin-top: 5.5rem;
+    color: black;
+}
