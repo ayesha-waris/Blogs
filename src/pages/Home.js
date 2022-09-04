@@ -6,14 +6,19 @@ import { ceil } from "mathjs";
 import { useState , useCallback} from "react";
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
+import TextField from '@mui/material/TextField';
+import FilterRadioButton from "../components/UI/Forms/FiterRadioButton";
 
 
 const Home = () => {
 
   const [page, setPage] = useState(1);
+  const [searchQuery, setSearchQuery] = useState('');
+ 
   
   const [url, setUrl] = useState(`http://localhost:8000/api/blogs/`);
   const { blogs, isLoading} = useFetch(url);
+  console.log(blogs)
 
   const handlePagination = useCallback ((e, value) => {
     setPage(value)
@@ -21,10 +26,26 @@ const Home = () => {
     setUrl(`http://localhost:8000/api/blogs/?limit=5&offset=${(value-1)*5}`)
 
   },[])
+  const handleSearchQuery = (event) => {
+    setSearchQuery(event.target.value);
 
+  };
+  const handleSearch = (event) => {
+    setUrl(`http://localhost:8000/api/blogs/?q=${searchQuery}`)
+
+  };
   return ( 
     
     <Wrapper>
+        <TextField
+        id="outlined-name"
+        label="Search"
+        value={searchQuery}
+        onChange={handleSearchQuery}
+      />
+      <button onClick={handleSearch}>  Search </button>
+      
+
     {isLoading && <div> is Loading ...............</div>}
     {blogs && 
   
