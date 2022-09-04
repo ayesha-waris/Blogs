@@ -10,18 +10,8 @@ import { useSelector } from 'react-redux';
 const Login = () => {
   const navigate = useNavigate()
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
-  const [token, setToken] = useState(null);
   const [error, setError] = useState(false);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    const token = JSON.parse(localStorage.getItem('token_access'));
-    
-    if (token) {
-     setToken(token);
-     dispatch(authActions.login());
-    }
-  }, [dispatch]);
 
   const onLoginSubmit = async (credentials) => {    
     const  data  = await AuthUser(

@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
 
-const Login = (props) => {
-
+const LoginForm = (props) => {
     const {
         register,
         handleSubmit,
@@ -41,4 +40,4 @@ const Login = (props) => {
         );
 }
  
-export default Login;
+export default LoginForm;
