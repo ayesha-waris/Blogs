@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import classes from './Edit.module.css';
-import Form from '../UI/Forms/Form';
+import Form from '../UI/Forms/BlogForm';
 
 const Edit = (props) => {
   const { id, title, content } = props;

@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
 import blogSlice from './blog-slice';
-import editPopoverSlice from './edit-popover-slice';
+import authSlice from './authSlice';
 
 const store = configureStore({
-  reducer: { blog: blogSlice.reducer, editPopover: editPopoverSlice.reducer },
+  reducer: { blog: blogSlice.reducer, auth: authSlice.reducer },
 });
 
 export default store;
