@@ -5,7 +5,8 @@ from user.serializers import UserSerializer
 
 class BlogSerializer(serializers.ModelSerializer):
     
-    author = UserSerializer(source='user', read_only=True)
+    author = UserSerializer(source='User', read_only=True)
+    # author = serializers.RelatedField(source='blogsModel', read_only=True)
     class Meta:
         model = BlogsModel
         fields = [
@@ -16,9 +17,9 @@ class BlogSerializer(serializers.ModelSerializer):
         ]
     
 
-    def get_user_data(self, obj):
+    def get_author_data(self, obj):
         return {
-            'username': obj.user.username
+            'author_username': obj.user.username
         }
 
     def create(self, validated_data):

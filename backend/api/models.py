@@ -30,3 +30,7 @@ class BlogsModel(models.Model):
 
     def __str__(self):
         return f'{self.author}'
+
+    @property
+    def author_username(self):
+        return self.user.username

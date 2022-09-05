@@ -20,6 +20,15 @@ class BlogListApiView(generics.ListAPIView):
     serializer_class = BlogSerializer 
     permission_classes = [IsAuthenticatedOrReadOnly]
 
+    def get_queryset(self, *args, **kwargs):
+        qs = super().get_queryset(*args, **kwargs)
+        q = self.request.GET.get('q')
+        results = BlogsModel.objects.all()
+        if q is not None: 
+            results = qs.search(q)
+        return results
+
+
 class FilteredListApiView(generics.ListAPIView):
     queryset = BlogsModel.objects.all()
     serializer_class = BlogSerializer 
@@ -28,7 +37,6 @@ class FilteredListApiView(generics.ListAPIView):
     def get_queryset(self, *args, **kwargs):
         qs = super().get_queryset(*args, **kwargs)
         q = self.request.GET.get('q')
-        print(qs[0].author)
         results = BlogsModel.objects.none()
         if q is not None: 
           results = qs.search(q)
@@ -42,7 +50,7 @@ class UserBlogsApiView(generics.ListAPIView):
     def get_queryset(self,*args, **kwargs):
         qs = super().get_queryset(*args, **kwargs)
         user = self.request.user
-        
+           
         # user = self.request.user
         if not user.is_authenticated:
           return BlogsModel.objects.none()

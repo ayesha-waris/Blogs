@@ -44,7 +44,7 @@ class LoginApiView(APIView):
         if user is not None:
             token = get_tokens_for_user(user)
             login(request, user)
-            return Response({'token': token, 'response': 'Login successful'})
+            return Response({'token': token ,'response': 'Login successful'})
         return Response({'response': 'Email or Password invalid'})
 
 
