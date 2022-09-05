@@ -2,8 +2,10 @@ import { useNavigate } from 'react-router';
 import Form from '../components/UI/Forms/BlogForm';
 import Wrapper from '../components/UI/Wrapper';
 import classes from './AddBlog.module.css';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import BlogAddorEdit from '../hooks/blogPostorPut'
 
 const AddBlog = () => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
@@ -11,31 +13,37 @@ const AddBlog = () => {
   const navigate = useNavigate();
   const url = 'http://localhost:8000/api/create-blog/';
   const token = JSON.parse(localStorage.getItem('access_token'));
-
-  const submitForm = (title, content) => {
-    const author = 'ayeshawariss';
+  const [blogNotAdded, setBlogNotAdded] = useState(false);
+  const submitForm = async (title, content) => {
+    const author = JSON.parse(localStorage.getItem('username'));
     const blog = { author: author, title: title, content: content };
-    console.log(JSON.stringify(blog));
-
-    fetch(url, {
+  
+    const requestOptions = {
       method: 'POST',
       body: JSON.stringify(blog),
       headers: {
         Authorization: `Bearer ${token}`,
         'Content-Type': 'application/json',
       },
-    }).then((res) => {
-      if (!res.ok) {
-        console.log(res);
-        console.error('Blog not created');
-      }
-    });
+  };
 
+  const data = await BlogAddorEdit(
+    url,
+   requestOptions
+   );
+  if (data) {
+    setBlogNotAdded(false);
     navigate('/index');
+  } else {
+    setBlogNotAdded(true);
+  }
+
   };
 
   return (
     <Wrapper>
+
+
       {isAuthenticated && (
         <>
           <Form

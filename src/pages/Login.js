@@ -21,6 +21,7 @@ const Login = () => {
     if (data.token) {
       localStorage.setItem('access_token', JSON.stringify(data.token.access));
       localStorage.setItem('refresh_token', JSON.stringify(data.token.refresh));
+      localStorage.setItem('username', JSON.stringify(credentials.username));
       setError(false);
       dispatch(authActions.login());
       navigate('/index');

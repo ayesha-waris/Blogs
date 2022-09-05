@@ -1,24 +1,33 @@
 import PropTypes from 'prop-types';
 import classes from './Edit.module.css';
 import Form from '../UI/Forms/BlogForm';
+import BlogAddorEdit from '../../hooks/blogPostorPut';
 
 const Edit = (props) => {
   const { id, title, content } = props;
 
   const url = `http://localhost:8000/api/edit/${id}/`;
 
-  const submitHandler = (title, content) => {
+  const submitHandler = async(title, content) => {
     const blog = { title, content };
-    fetch(url, {
+    const token = JSON.parse(localStorage.getItem('access_token'));
+    const requestOptions = {
       method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(blog),
-    }).then((res) => {
-      if (!res.ok) {
-        console.error('Blog not edited successfully');
-      }
-    });
-    props.handleClose(title, content);
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      }}
+    const data = await BlogAddorEdit(
+      url,
+      requestOptions
+      );
+    console.log(data)
+    if (data) {
+      props.handleClose(title, content);
+      
+    }
+   
   };
 
   return (

@@ -7,8 +7,10 @@ import Container from '@mui/material/Container';
 import { useNavigate } from 'react-router';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import NavElement from './NavElement';
+import { useSelector } from 'react-redux';
 
 const NavBar = () => {
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const navigate = useNavigate();
   const onClickHandler = () => {
     navigate('/index');
@@ -48,9 +50,13 @@ const NavBar = () => {
           <Box sx={{ flexGrow: 2, display: { xs: 'none', md: 'flex' } }}>
             <NavElement page='Home' path='/index' />
             <NavElement page='Login' path='/login' />
-            <NavElement page='Add Blog' path='/newBlog' />
-            <NavElement page='My Blogs' path='/myBlogs' />
-            <NavElement page='Logout' path='/myBlogs' />
+            {isAuthenticated && 
+            <>
+                        <NavElement page='Add Blog' path='/newBlog' />
+                        <NavElement page='My Blogs' path='/myBlogs' />
+                        <NavElement page='Logout' path='/index' logout={true} />
+                        </>}
+
             
             
           </Box>
